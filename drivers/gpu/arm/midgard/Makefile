@@ -20,7 +20,8 @@
 #
 
 
-KDIR ?= /lib/modules/$(shell uname -r)/build
+#KDIR ?= /lib/modules/$(shell uname -r)/build
+KDIR ?= /lib/modules/$(shell readlink /usr/src/linux|cut -d'-' --complement -s -f1)/build
 
 BUSLOG_PATH_RELATIVE = $(CURDIR)/../../../..
 KBASE_PATH_RELATIVE = $(CURDIR)
